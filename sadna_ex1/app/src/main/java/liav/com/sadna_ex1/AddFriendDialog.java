@@ -36,6 +36,10 @@ public class AddFriendDialog extends AppCompatDialogFragment {
                     public void onClick(DialogInterface dialog, int which) {
                         String name = editTextName.getText().toString();
                         String phone = editTextNumber.getText().toString();
+                        MainActivity.names.add(name);
+                        MainActivity.numbers.add(phone);
+                        MainActivity.adapter.notifyDataSetChanged();
+
                     }
                 });
 

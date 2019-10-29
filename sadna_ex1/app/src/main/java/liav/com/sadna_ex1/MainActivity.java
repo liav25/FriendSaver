@@ -20,8 +20,10 @@ public class MainActivity extends AppCompatActivity {
     //Initialize add friend button
     private Button addFriend;
     //friends lists
-    private ArrayList<String> names = new ArrayList<>();
-    private ArrayList<String> numbers = new ArrayList<>();
+    public static ArrayList<String> names = new ArrayList<>();
+    public static ArrayList<String> numbers = new ArrayList<>();
+
+    public static FriendsAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +47,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        names.add("123");
-        numbers.add("456");
+        names.add("Yoni");
+        numbers.add("0523456789");
     }
 
     private void initFriendsList(){
         RecyclerView friends = findViewById(R.id.friends_rec_view);
-        FriendsAdapter adapter = new FriendsAdapter(this, names, numbers);
+        adapter = new FriendsAdapter(this, names, numbers);
         friends.setAdapter(adapter);
         friends.setLayoutManager(new LinearLayoutManager(this));
     }
