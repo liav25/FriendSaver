@@ -10,21 +10,18 @@ import android.widget.LinearLayout;
 import android.widget.TextClock;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     //Initialize TextViews of the Activity
     private TextView titleWelcome;
     private TextView introText;
-    //Initialize RecyclerView
-    private RecyclerView friends;
     //Initialize add friend button
     private Button addFriend;
-
-    //initialize the recyclerview adapter
-    FriendsAdapter friendsAdapter;
-
-    //initialize layour manager
-    LinearLayoutManager layoutManager;
+    //friends lists
+    private ArrayList<String> names = new ArrayList<>();
+    private ArrayList<String> numbers = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,20 +31,10 @@ public class MainActivity extends AppCompatActivity {
         //connect the XML's views to relative objects
         titleWelcome = (TextView)findViewById(R.id.title_welcome);
         introText = (TextView)findViewById(R.id.intro_text);
-        friends = (RecyclerView)findViewById(R.id.friends_rec_view);
         addFriend = (Button)findViewById(R.id.be_friend_button);
 
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
-        friends.setHasFixedSize(true);
-
-        // use a linear layout manager
-        layoutManager = new LinearLayoutManager(this);
-        friends.setLayoutManager(layoutManager);
-
-        // specify an adapter (see also next example)
-        friendsAdapter = new FriendsAdapter(myDataset);
-        friends.setAdapter(friendsAdapter);
+        // initialize friends list
+        initFriendsList();
 
 
         addFriend.setOnClickListener(new View.OnClickListener() {
@@ -57,5 +44,12 @@ public class MainActivity extends AppCompatActivity {
                 addFriendDialog.show(getSupportFragmentManager(), "add friend");
             }
         });
+    }
+
+    private void initFriendsList(){
+        RecyclerView friends = findViewById(R.id.friends_rec_view);
+        FriendsAdapter adapter = new FriendsAdapter(this, names, numbers);
+        friends.setAdapter(adapter);
+        friends.setLayoutManager(new LinearLayoutManager(this));
     }
 }

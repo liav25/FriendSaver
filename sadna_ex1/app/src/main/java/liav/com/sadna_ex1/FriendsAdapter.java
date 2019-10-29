@@ -6,34 +6,58 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-public class FriendsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
-    Context context;
-    String[] items;
-    public FriendsAdapter(Context mContext, String[] mItems){
-        this.context = mContext;
-        this.items = mItems;
+import java.util.ArrayList;
+
+
+public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHolder> {
+
+    private ArrayList<String> names = new ArrayList<>();
+    private ArrayList<String> numbers = new ArrayList<>();
+    private Context context;
+
+    public FriendsAdapter(Context context, ArrayList<String> mNames, ArrayList<String> mNumbers) {
+        this.names = mNames;
+        this.numbers = mNumbers;
+        this.context = context;
     }
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View row = inflater.inflate(R.layout.friend_row, parent, false);
-        Item item = new Item(row);
-        return null;
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.friend_item, parent, false);
+        ViewHolder holder = new ViewHolder(view);
+        return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.name.setText(names.get(position));
+        holder.number.setText(numbers.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return items.length;
+        return names.size();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+        //create view objects
+        TextView name;
+        TextView number;
+        LinearLayout parentLayout;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            //link the view obejcts to the XML
+            name = itemView.findViewById(R.id.name);
+            number = itemView.findViewById(R.id.number);
+            parentLayout = itemView.findViewById(R.id.parent);
+        }
     }
 }
