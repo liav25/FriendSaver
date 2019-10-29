@@ -55,8 +55,8 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHold
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //link the view obejcts to the XML
-            name = itemView.findViewById(R.id.name);
-            number = itemView.findViewById(R.id.number);
+            name = itemView.findViewById(R.id.friend_name);
+            number = itemView.findViewById(R.id.friend_phone);
             parentLayout = itemView.findViewById(R.id.parent);
         }
     }

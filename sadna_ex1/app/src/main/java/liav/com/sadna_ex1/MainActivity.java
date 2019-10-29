@@ -44,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
                 addFriendDialog.show(getSupportFragmentManager(), "add friend");
             }
         });
+
+        names.add("123");
+        numbers.add("456");
     }
 
     private void initFriendsList(){
@@ -52,4 +55,6 @@ public class MainActivity extends AppCompatActivity {
         friends.setAdapter(adapter);
         friends.setLayoutManager(new LinearLayoutManager(this));
     }
+
+
 }
