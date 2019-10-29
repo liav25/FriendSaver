@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">sadna_ex1</string>
+    <string name="welcome_to_my_task">Welcome To My Task</string>
+    <string name="intro_text_content">Hi everyone. My name is Liav, and this is my first task in the Sadna. Since I am not a CS student and I don\'t know anyone in the Sadna, I made this task to find myself new friends and project partners.</string>
 </resources>
