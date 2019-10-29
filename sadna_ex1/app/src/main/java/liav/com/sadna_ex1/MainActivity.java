@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView introText;
     //Initialize add friend button
     private Button addFriend;
-    //friends lists
+    //source lists for recycler view
+    //must be static because they get information from dialog without bundle
     public static ArrayList<String> names = new ArrayList<>();
     public static ArrayList<String> numbers = new ArrayList<>();
 
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //manually add something to the recycler view to show
         names.add("Yoni");
         numbers.add("0523456789");
     }

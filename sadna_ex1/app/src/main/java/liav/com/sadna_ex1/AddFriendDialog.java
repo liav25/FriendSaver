@@ -24,13 +24,16 @@ public class AddFriendDialog extends AppCompatDialogFragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view  = inflater.inflate(R.layout.activity_add_friend_dialog, null);
 
+        //set the dialog view
         builder.setView(view).setTitle("Be My Friend !")
+                //when negative button pressed
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                     }
                 })
+                //when positive button pressed
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

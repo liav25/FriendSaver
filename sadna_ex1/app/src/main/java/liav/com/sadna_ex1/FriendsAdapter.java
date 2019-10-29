@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHolder> {
 
+    //source lists for recycler view
     private ArrayList<String> names = new ArrayList<>();
     private ArrayList<String> numbers = new ArrayList<>();
     private Context context;
