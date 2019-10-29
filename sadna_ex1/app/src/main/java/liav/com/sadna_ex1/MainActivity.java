@@ -29,5 +29,12 @@ public class MainActivity extends AppCompatActivity {
         friends = (RecyclerView)findViewById(R.id.friends_rec_view);
         addFriend = (Button)findViewById(R.id.be_friend_button);
 
+        addFriend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AddFriendDialog addFriendDialog = new AddFriendDialog();
+                addFriendDialog.show(getSupportFragmentManager(), "add friend");
+            }
+        });
     }
 }
