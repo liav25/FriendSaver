@@ -14,15 +14,8 @@
         android:orientation="vertical"
         app:layout_constraintGuide_end="397dp" />
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="395dp" />
-
     <TextView
-        android:id="@+id/header"
+        android:id="@+id/title_welcome"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
