@@ -50,6 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_weight="5"
+        android:scrollbars="vertical"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="231dp" />
 

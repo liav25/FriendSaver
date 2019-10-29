@@ -39,8 +39,8 @@ public class AddFriendDialog extends AppCompatDialogFragment {
                     }
                 });
 
-        name = view.findViewById(R.id.name);
-        number = view.findViewById(R.id.number);
+        editTextName = view.findViewById(R.id.name);
+        editTextNumber = view.findViewById(R.id.number);
 
         return builder.create();
 
