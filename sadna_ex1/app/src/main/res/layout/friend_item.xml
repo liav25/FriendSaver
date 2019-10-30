@@ -19,7 +19,8 @@
         android:text="Name"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:padding="10dp"
+        android:textColor="#000000"
+        android:paddingHorizontal="10dp"
  />
 
     <TextView
@@ -27,8 +28,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0521111111"
+        android:textColor="#2b2d2f"
         android:textSize="14sp"
-        android:padding="10dp"
+        android:paddingTop="10dp"
+        android:paddingHorizontal="10dp"
  />
 
     <TextView
@@ -36,8 +39,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="designer"
+        android:textStyle="italic"
         android:textSize="14sp"
-        android:padding="10dp"
+        android:paddingTop="3dp"
+        android:paddingHorizontal="10dp"
         />
 </LinearLayout>
     <ImageView
