@@ -6,7 +6,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -19,11 +21,13 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHold
     //source lists for recycler view
     private ArrayList<String> names = new ArrayList<>();
     private ArrayList<String> numbers = new ArrayList<>();
+    public ArrayList<String> abillities = new ArrayList<>();
     private Context context;
 
-    public FriendsAdapter(Context context, ArrayList<String> mNames, ArrayList<String> mNumbers) {
+    public FriendsAdapter(Context context, ArrayList<String> mNames, ArrayList<String> mNumbers, ArrayList<String> mAbillity) {
         this.names = mNames;
         this.numbers = mNumbers;
+        this.abillities = mAbillity;
         this.context = context;
     }
 
@@ -39,6 +43,7 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.name.setText(names.get(position));
         holder.number.setText(numbers.get(position));
+        holder.abillityText.setText(abillities.get(position));
     }
 
     @Override
@@ -51,6 +56,7 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHold
         //create view objects
         TextView name;
         TextView number;
+        TextView abillityText;
         LinearLayout parentLayout;
 
         public ViewHolder(@NonNull View itemView) {
@@ -58,6 +64,7 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHold
             //link the view obejcts to the XML
             name = itemView.findViewById(R.id.friend_name);
             number = itemView.findViewById(R.id.friend_phone);
+            abillityText = itemView.findViewById(R.id.abillity_text);
             parentLayout = itemView.findViewById(R.id.parent);
         }
     }

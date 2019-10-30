@@ -6,17 +6,19 @@ import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDialogFragment;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 
 public class AddFriendDialog extends AppCompatDialogFragment {
 
     EditText editTextName;
     EditText editTextNumber;
-    CheckBox isDesigner;
-    CheckBox isDeveloper;
+    RadioButton isDesigner;
+    RadioButton isDeveloper;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -39,8 +41,13 @@ public class AddFriendDialog extends AppCompatDialogFragment {
                     public void onClick(DialogInterface dialog, int which) {
                         String name = editTextName.getText().toString();
                         String phone = editTextNumber.getText().toString();
+                        String abillity = "Developer";
+                        if(isDesigner.isChecked()){
+                            abillity = "Designer";
+                        }
                         MainActivity.names.add(name);
                         MainActivity.numbers.add(phone);
+                        MainActivity.abillities.add(abillity);
                         MainActivity.adapter.notifyDataSetChanged();
 
                     }
@@ -48,6 +55,10 @@ public class AddFriendDialog extends AppCompatDialogFragment {
 
         editTextName = view.findViewById(R.id.name);
         editTextNumber = view.findViewById(R.id.number);
+        editTextNumber.setInputType(InputType.TYPE_CLASS_NUMBER);
+
+        isDesigner = view.findViewById(R.id.des_radio);
+        isDeveloper = view.findViewById(R.id.dev_radio);
 
         return builder.create();
 

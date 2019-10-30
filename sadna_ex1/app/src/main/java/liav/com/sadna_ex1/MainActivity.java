@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     //must be static because they get information from dialog without bundle
     public static ArrayList<String> names = new ArrayList<>();
     public static ArrayList<String> numbers = new ArrayList<>();
+    public static ArrayList<String> abillities = new ArrayList<>();
 
     public static FriendsAdapter adapter;
 
@@ -51,11 +52,12 @@ public class MainActivity extends AppCompatActivity {
         //manually add something to the recycler view to show
         names.add("Yoni");
         numbers.add("0523456789");
+        abillities.add("Designer");
     }
 
     private void initFriendsList(){
         RecyclerView friends = findViewById(R.id.friends_rec_view);
-        adapter = new FriendsAdapter(this, names, numbers);
+        adapter = new FriendsAdapter(this, names, numbers, abillities);
         friends.setAdapter(adapter);
         friends.setLayoutManager(new LinearLayoutManager(this));
     }
