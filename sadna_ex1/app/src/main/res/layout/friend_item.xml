@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,45 +7,51 @@
     android:orientation="horizontal"
     android:id="@+id/parent"
     >
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_weight="9">
 
-    <TextView
-        android:id="@+id/friend_name"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:paddingHorizontal="10dp"
- />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/friend_phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0521111111"
-        android:textColor="#2b2d2f"
-        android:textSize="14sp"
-        android:paddingTop="10dp"
-        android:paddingHorizontal="10dp"
- />
+        <TextView
+            android:id="@+id/friend_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Name"
+            android:padding="5dp"
+            android:layout_margin="1dp"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
 
-    <TextView
-        android:id="@+id/abillity_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="designer"
-        android:textStyle="italic"
-        android:textSize="14sp"
-        android:paddingTop="3dp"
-        android:paddingHorizontal="10dp"
-        />
-</LinearLayout>
+            />
+
+        <TextView
+            android:id="@+id/friend_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingHorizontal="5dp"
+            android:text="0521111111"
+            android:layout_margin="5dp"
+
+            android:textColor="#2b2d2f"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/abillity_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="3dp"
+            android:text="designer"
+            android:padding="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+    </LinearLayout>
     <ImageView
         android:scaleType="fitXY"
         android:id="@+id/card_image"
@@ -53,7 +59,8 @@
         android:layout_height="100dp"
         android:src="@drawable/ic_person_black_24dp"
         android:layout_weight="1"
+        android:layout_alignParentRight="true"
         />
 
 
-</android.widget.LinearLayout>
+</RelativeLayout>
