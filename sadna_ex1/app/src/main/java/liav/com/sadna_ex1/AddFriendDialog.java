@@ -3,6 +3,9 @@ package liav.com.sadna_ex1;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDialogFragment;
@@ -11,14 +14,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 
 public class AddFriendDialog extends AppCompatDialogFragment {
+
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+
 
     EditText editTextName;
     EditText editTextNumber;
     RadioButton isDesigner;
     RadioButton isDeveloper;
+    ImageButton upload;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -60,9 +68,35 @@ public class AddFriendDialog extends AppCompatDialogFragment {
         isDesigner = view.findViewById(R.id.des_radio);
         isDeveloper = view.findViewById(R.id.dev_radio);
 
+        upload = view.findViewById(R.id.upload_pic);
+
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         return builder.create();
 
 
 
     }
+    /**
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            upload.setImageBitmap(imageBitmap);
+        }
+    }
+    **/
 }
