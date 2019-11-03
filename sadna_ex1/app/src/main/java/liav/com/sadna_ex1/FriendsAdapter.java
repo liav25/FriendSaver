@@ -18,6 +18,8 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 
 public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHolder> {
 
@@ -64,7 +66,7 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHold
         TextView name;
         TextView number;
         TextView abillityText;
-        ImageView profilePic;
+        CircleImageView profilePic;
 
         LinearLayout parentLayout;
 
