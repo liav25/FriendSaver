@@ -1,5 +1,7 @@
 package liav.com.sadna_ex1;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<String> names = new ArrayList<>();
     public static ArrayList<String> numbers = new ArrayList<>();
     public static ArrayList<String> abillities = new ArrayList<>();
+    public static ArrayList<Bitmap> images = new ArrayList<>();
+
 
     public static FriendsAdapter adapter;
 
@@ -53,11 +57,14 @@ public class MainActivity extends AppCompatActivity {
         names.add("Yoni");
         numbers.add("0523456789");
         abillities.add("Designer");
+        Bitmap icon = BitmapFactory.decodeResource(this.getResources(),
+                R.drawable.ic_person_black_24dp);
+        images.add(icon);
     }
 
     private void initFriendsList(){
         RecyclerView friends = findViewById(R.id.friends_rec_view);
-        adapter = new FriendsAdapter(this, names, numbers, abillities);
+        adapter = new FriendsAdapter(this, names, numbers, abillities, images);
         friends.setAdapter(adapter);
         friends.setLayoutManager(new LinearLayoutManager(this));
     }

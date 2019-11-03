@@ -46,7 +46,7 @@
         />
 </LinearLayout>
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/card_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
         tools:srcCompat="@tools:sample/avatars"
