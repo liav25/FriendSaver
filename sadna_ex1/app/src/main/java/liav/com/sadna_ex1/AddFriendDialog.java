@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDialogFragment;
 import android.text.InputType;
+import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
@@ -73,7 +74,8 @@ public class AddFriendDialog extends AppCompatDialogFragment {
 
         editTextName = view.findViewById(R.id.name);
         editTextNumber = view.findViewById(R.id.number);
-        editTextNumber.setInputType(InputType.TYPE_CLASS_NUMBER);
+        editTextNumber.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD);
+        editTextNumber.setTransformationMethod(new NumericKeyBoardTransformationMethod());
 
         isDesigner = view.findViewById(R.id.des_radio);
         isDeveloper = view.findViewById(R.id.dev_radio);
@@ -108,6 +110,12 @@ public class AddFriendDialog extends AppCompatDialogFragment {
 
         //}
 
+    }
+    private class NumericKeyBoardTransformationMethod extends PasswordTransformationMethod {
+        @Override
+        public CharSequence getTransformation(CharSequence source, View view) {
+            return source;
+        }
     }
 
 
