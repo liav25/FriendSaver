@@ -74,7 +74,6 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHold
             name = itemView.findViewById(R.id.friend_name);
             number = itemView.findViewById(R.id.friend_phone);
             abillityText = itemView.findViewById(R.id.abillity_text);
-            parentLayout = itemView.findViewById(R.id.parent);
             profilePic = itemView.findViewById(R.id.card_image);
         }
     }
